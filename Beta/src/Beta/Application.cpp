@@ -1,9 +1,7 @@
 #include "btpch.h"
 #include "Application.h"
-
 #include "Beta/Events/ApplicationEvent.h"
 #include "Beta/Log.h"
-
 #include <GLFW/glfw3.h>
 
 namespace Beta {

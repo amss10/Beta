@@ -26,7 +26,6 @@ namespace Beta {
 #define BT_CORE_WARN(...)     ::Beta::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define BT_CORE_ERROR(...)    ::Beta::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define BT_CORE_FATAL(...)    ::Beta::Log::GetCoreLogger()->fatal(__VA_ARGS__)
-
 // Client log macros
 #define BT_TRACE(...)	      ::Beta::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define BT_INFO(...)	      ::Beta::Log::GetClientLogger()->info(__VA_ARGS__)

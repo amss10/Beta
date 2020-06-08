@@ -10,6 +10,7 @@ int main(int argc, char** argv)
 	BT_CORE_WARN("Initialized Log!");
 	int a = 5;
 	BT_INFO("Hello! Var={0}", a);
+	BT_ERROR("Hello! Var={0}", a);
 
 	auto app = Beta::CreateApplication();
 	app->Run();
