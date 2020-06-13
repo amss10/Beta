@@ -1,21 +1,24 @@
-#include <Beta.h>
+#include <Hazel.h>
+#include <Hazel/Core/EntryPoint.h>
 
-class Sandbox : public Beta::Application
+#include "Sandbox2D.h"
+#include "ExampleLayer.h"
+
+class Sandbox : public Hazel::Application
 {
 public:
 	Sandbox()
 	{
-
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 
 	~Sandbox()
 	{
-
 	}
-
 };
 
-Beta::Application* Beta::CreateApplication()
+Hazel::Application* Hazel::CreateApplication()
 {
 	return new Sandbox();
 }
