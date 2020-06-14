@@ -21,7 +21,9 @@ namespace Hazel {
 		s_Instance = this;
 		m_Window = Window::Create();
 		m_Window->SetEventCallback(HZ_BIND_EVENT_FN(Application::OnEvent));
+
 		Renderer::Init();
+
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 	}
@@ -29,12 +31,14 @@ namespace Hazel {
 	Application::~Application()
 	{
 		HZ_PROFILE_FUNCTION();
+
 		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
 		HZ_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
@@ -42,6 +46,7 @@ namespace Hazel {
 	void Application::PushOverlay(Layer* layer)
 	{
 		HZ_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
 	}
@@ -54,10 +59,7 @@ namespace Hazel {
 	void Application::OnEvent(Event& e)
 	{
 		HZ_PROFILE_FUNCTION();
-		/// <summary>
-		HZ_CORE_INFO("{0}", e);
-		/// </summary>
-		/// <param name="e"></param>
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(HZ_BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(HZ_BIND_EVENT_FN(Application::OnWindowResize));
