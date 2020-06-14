@@ -1,10 +1,10 @@
-#include <Hazel.h>
-#include <Hazel/Core/EntryPoint.h>
+#include <Beta.h>
+#include <Beta/Core/EntryPoint.h>
 
 #include "Sandbox2D.h"
 #include "ExampleLayer.h"
 
-class Sandbox : public Hazel::Application
+class Sandbox : public Beta::Application
 {
 public:
 	Sandbox()
@@ -18,7 +18,7 @@ public:
 	}
 };
 
-Hazel::Application* Hazel::CreateApplication()
+Beta::Application* Beta::CreateApplication()
 {
 	return new Sandbox();
 }

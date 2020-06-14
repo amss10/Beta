@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Hazel.h"
+#include "Beta.h"
 
-class Sandbox2D : public Hazel::Layer
+class Sandbox2D : public Beta::Layer
 {
 public:
 	Sandbox2D();
@@ -11,18 +11,19 @@ public:
 	virtual void OnAttach() override;
 	virtual void OnDetach() override;
 
-	void OnUpdate(Hazel::Timestep ts) override;
+	void OnUpdate(Beta::Timestep ts) override;
 	virtual void OnImGuiRender() override;
-	void OnEvent(Hazel::Event& e) override;
+	void OnEvent(Beta::Event& e) override;
 private:
-	Hazel::OrthographicCameraController m_CameraController;
+	Beta::OrthographicCameraController m_CameraController;
 	
 	// Temp
-	Hazel::Ref<Hazel::VertexArray> m_SquareVA;
-	Hazel::Ref<Hazel::Shader> m_FlatColorShader;
-	Hazel::Ref<Hazel::Framebuffer> m_Framebuffer;
+	Beta::Ref<Beta::VertexArray> m_SquareVA;
+	Beta::Ref<Beta::Shader> m_FlatColorShader;
 
-	Hazel::Ref<Hazel::Texture2D> m_CheckerboardTexture;
+	Beta::Ref<Beta::Texture2D> m_CheckerboardTexture;
+	Beta::Ref<Beta::Texture2D> m_BetaLogoTexture;
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
+	glm::vec4 m_SquareColor2 = { 0.5f, 1.0f, 0.4f, 1.0f };
 };
